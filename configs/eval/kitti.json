@@ -1,0 +1,9 @@
+{
+    "kitti": {
+        "path": "data/eval/kitti",
+        "split": ".index.txt",
+        "depth": "depth.png",
+        "sensor_depth": "raw_depth.png",
+        "depth_unit": 1.0
+    }
+}

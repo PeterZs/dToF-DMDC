@@ -1,0 +1,13 @@
+{
+    "eth3d": {
+        "path": "data/eval/eth3d",
+        "split": ".index.txt",
+        "depth": "depth.png",
+        "depth_unit": 1.0,
+        "sensor_sim": {
+            "random_sparse": {
+                "num_samples": 500
+            }
+        }
+    }
+}

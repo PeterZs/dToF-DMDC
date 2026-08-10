@@ -1,0 +1,20 @@
+numpy==1.26.4
+scipy==1.14.1
+matplotlib==3.9.2
+pillow==10.4.0
+opencv-python-headless==4.10.0.84
+tqdm==4.66.5
+click==8.1.7
+trimesh==4.5.1
+pyglet==1.5.31  # trimesh's viewer backend for `dtof-dmdc infer --show`; must stay <2
+huggingface_hub==0.25.2
+git+https://github.com/EasternJournalist/pipeline.git@1c511390d90226c00c101f34b84df26a0f8789b4
+git+https://github.com/EasternJournalist/utils3d.git@6abd5afc22c326eb8ee93945d5980dde2dcf3b3b
+
+# --- Additional dependencies for training (uncomment if using the training code) ---
+# transformers==4.45.2
+# accelerate==1.0.1
+# mlflow
+# einops==0.8.0
+# sympy==1.13.3
+# imageio==2.36.0

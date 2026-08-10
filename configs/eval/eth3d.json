@@ -1,0 +1,9 @@
+{
+    "eth3d": {
+        "path": "data/eval/eth3d",
+        "split": ".index.txt",
+        "depth": "depth.png",
+        "sensor_depth": "sensor_depth.png",
+        "depth_unit": 1.0
+    }
+}

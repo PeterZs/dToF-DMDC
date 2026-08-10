@@ -1,0 +1,26 @@
+# Conda environment for running / evaluating dToF-DMDC (no Docker required).
+#
+# Usage (run from the repo root so `-r requirements.txt` and `-e .` resolve):
+#     conda env create -f environment.yml
+#     conda activate dtof-dmdc
+#
+# The host only needs an NVIDIA driver >= 570 (for CUDA 12.8). No system CUDA
+# toolkit is required: the PyTorch / xformers cu128 wheels bundle their own
+# CUDA runtime libraries.
+name: dtof-dmdc
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip>=23
+  - pip:
+      # PyTorch + xformers, CUDA 12.8 build. The `+cu128` local-version tag
+      # forces pip to pull these from the PyTorch index instead of PyPI.
+      - --extra-index-url https://download.pytorch.org/whl/cu128
+      - torch==2.7.0+cu128
+      - torchvision==0.22.0+cu128
+      - xformers==0.0.30
+      # Everything else (single source of truth), then the package itself so
+      # the `dtof-dmdc` command becomes available.
+      - -r requirements.txt
+      - -e .

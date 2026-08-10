@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dtof-dmdc"
+version = "1.0.0"
+description = "dToF-DMDC: Dense Metric Depth Completion from Sparse Direct Time-of-Flight Sensors"
+readme = "README.md"
+license = {text = "MIT"}
+dependencies = [
+    "click",
+    "opencv-python-headless",
+    "scipy",
+    "matplotlib",
+    "trimesh",
+    "pillow",
+    "huggingface_hub",
+    "numpy",
+    "tqdm",
+    "torch>=2.0.0",
+    "torchvision",
+    "pipeline @ git+https://github.com/EasternJournalist/pipeline.git@1c511390d90226c00c101f34b84df26a0f8789b4",
+    "utils3d @ git+https://github.com/EasternJournalist/utils3d.git@6abd5afc22c326eb8ee93945d5980dde2dcf3b3b"
+]
+requires-python = ">=3.10"
+
+[project.optional-dependencies]
+# Interactive viewer for `dtof-dmdc infer --show`; trimesh's viewer backend requires pyglet<2.
+viewer = ["pyglet<2"]
+
+[project.urls]
+Homepage = "https://github.com/KAIST-VCLAB/dToF-DMDC"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["dtof_dmdc*"]
+
+[project.scripts]
+dtof-dmdc = "dtof_dmdc.scripts.cli:main"
