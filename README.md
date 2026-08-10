@@ -54,8 +54,6 @@ docker build -t dtof-dmdc .
 docker run --gpus all -it --name dtof-dmdc -v $(pwd):/code $path_to_dataset:/data dtof-dmdc
 ```
 
-### Dataset 
-
 ## 🤗 Pretrained Models
 Our pretrained models are available on the huggingface hub:
 <table>
